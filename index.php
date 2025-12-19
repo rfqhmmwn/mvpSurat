@@ -44,9 +44,9 @@
                                 <td><?php echo $row['alamat']; ?></td>
                                 <td>
                                     <span class="status-badge <?php 
-                                        if ($row['status'] == 'Pending') echo 'status-pending';
-                                        elseif ($row['status'] == 'Accept') echo 'status-approved';
-                                        elseif ($row['status'] == 'Canceled') echo 'status-rejected';
+                                        if ($row['status'] == 'pending') echo 'status-pending';
+                                        elseif ($row['status'] == 'accept') echo 'status-approved';
+                                        elseif ($row['status'] == 'canceled') echo 'status-rejected';
                                         else echo 'status-pending';
                                     ?>">
                                         <?php echo $row['status']; ?>

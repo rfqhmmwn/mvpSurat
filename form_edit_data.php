@@ -38,8 +38,20 @@
                         <input type="text" name="alamat" value="<?php echo $data['alamat'] ?>" class="form-control" id="exampleInputDescriptio" aria-describedby="alamatHelp" placeholder="Enter alamat">
                     </div>
                     <div class="form-group">
-                        <label for ="exampleInputDescription">Status</label>
-                        <input type="text" name="status" value="<?php echo $data['status'] ?>" class="form-control" id="exampleInputDescriptio" aria-describedby="statusHelp" placeholder="Enter status">
+                        <label for="status">Status</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="pending" <?php if ($data['status'] == 'pending') echo 'selected'; ?>>
+                                    Pending
+                                </option>
+                                <option value="accept" <?php if ($data['status'] == 'accept') echo 'selected'; ?>>
+                                    Accept
+                                </option>
+                                <option value="canceled" <?php if ($data['status'] == 'canceled') echo 'selected'; ?>>
+                                    Canceled
+                                </option>
+                            </select>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="card-footer">

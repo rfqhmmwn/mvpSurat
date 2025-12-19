@@ -2,7 +2,7 @@
 
 // $db= new mysqli('localhost', 'root', '', 'sbadmin2_starterkit');
 // $db= new PDO("sqlite:data2.sqlite");
-$db = new PDO("mysql:host=localhost;dbname=sbadmin2_starterkit", 'root');
+$db = new PDO("mysql:host=localhost;dbname=mvpSurat", 'root');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

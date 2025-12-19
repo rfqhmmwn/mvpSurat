@@ -40,7 +40,7 @@ include 'function/function.php';
 
         <!-- Sidebar -->
          <?php
-            include 'inc/sidebar.php';
+            include 'inc/admin/sidebar.php';
         ?>
        
         <!-- Content Wrapper -->

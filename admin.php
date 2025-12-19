@@ -1,6 +1,6 @@
 <?php
-    include 'inc/header.php';      
-    $groups = new Groups;
+    include 'inc/admin/header.php';      
+    $admin = new admin;
 ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -11,7 +11,6 @@
             <?php 
                 session_message();
             ?>
-            <a href="form_add_groups.php" class="btn btn-primary d-sm-inline-block d-none">Add</a>
         </div>
 
         <!-- DataTales Example -->
@@ -25,25 +24,21 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Description</th>
+                                <th>Nama</th>
+                                <th>Jenis Surat</th>
+                                <th>Alamat</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Group Name</th>
-                                <th>Description</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
-                            <?php foreach($groups->get_groups() as $row) : ?>
+                            <?php foreach($admin->get_data() as $row) : ?>
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['description']; ?></td>
+                                    <td><?php echo $row['nama']; ?></td>
+                                    <td><?php echo $row['surat']; ?></td>
+                                    <td><?php echo $row['alamat']; ?></td>
+                                    <td><?php echo $row['status']; ?></td>
                                     <td>
                                          <a href="groups.php?action=hapus&id=<?php echo $row['id'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                          <a href="form_edit_groups.php?id=<?php echo $row['id'];?>" class="btn btn-warning btn-sm">Edit</a>
@@ -54,7 +49,7 @@
                                 if(isset($_GET['action']) == 'hapus' && isset($_GET['id'])) 
                                     {   
                                         $id = $_GET['id'];
-                                        $groups->delete_groups($id);                            
+                                        $admin->delete_data($id);                            
                                     }
                             ?>
                         </tbody>
@@ -67,6 +62,6 @@
     <!-- /.container-fluid -->
 
 <?php
-    include 'inc/footer.php';   
+    include 'inc/admin/footer.php';   
 ?>
 

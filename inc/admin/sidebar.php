@@ -13,41 +13,15 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="admin.php">
                     <span>Dashboard</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="blank.php">
-                    <span>Blank Page</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="404.php">
-                    <span>404</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.php">
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="form_add.php">
-                    <i class="fas fa-fw fa-list"></i>
-                    <span>Form Add</span></a>
-            </li> -->
-
-            <li class="nav-item">
-                <a class="nav-link" href="groups.php">
-                    <span>Groups</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="users.php">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">
                     <span>Users</span></a>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

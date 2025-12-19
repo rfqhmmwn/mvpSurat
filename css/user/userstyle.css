@@ -1,168 +1,3 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f5f7fa;
-    color: #2d3748;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.main-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-}
-
-.header-section {
-    background: white;
-    border-radius: 12px;
-    padding: 24px 32px;
-    margin-bottom: 24px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-section h2 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 600;
-    color: #1a202c;
-}
-
-.btn-add {
-    background: #667eea;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.btn-add:hover {
-    background: #5568d3;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.btn-add i {
-    font-size: 20px;
-}
-
-.table-container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-height: 0;
-}
-
-.table-wrapper {
-    flex: 1;
-    overflow-y: auto;
-    min-height: 380px; /* Height for 5 rows + header */
-}
-
-.table-wrapper::-webkit-scrollbar {
-    width: 8px;
-}
-
-.table-wrapper::-webkit-scrollbar-track {
-    background: #f7fafc;
-    border-radius: 4px;
-}
-
-.table-wrapper::-webkit-scrollbar-thumb {
-    background: #cbd5e0;
-    border-radius: 4px;
-}
-
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #a0aec0;
-}
-
-table.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-table.data-table thead {
-    position: sticky;
-    top: 0;
-    background: #f7fafc;
-    z-index: 10;
-}
-
-table.data-table thead th {
-    padding: 16px 20px;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 600;
-    color: #718096;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-table.data-table thead th:first-child {
-    width: 80px;
-}
-
-table.data-table thead th:nth-child(2) {
-    width: 20%;
-}
-
-table.data-table thead th:nth-child(3) {
-    width: 20%;
-}
-
-table.data-table thead th:nth-child(4) {
-    width: 35%;
-}
-
-table.data-table thead th:nth-child(5) {
-    width: 15%;
-}
-
-table.data-table tbody tr {
-    border-bottom: 1px solid #e2e8f0;
-    transition: background-color 0.2s ease;
-}
-
-table.data-table tbody tr:hover {
-    background-color: #f7fafc;
-}
-
-table.data-table tbody td {
-    padding: 18px 20px;
-    font-size: 14px;
-    color: #2d3748;
-    vertical-align: middle;
-}
-
-table.data-table tbody td:first-child {
-    font-weight: 600;
-    color: #4a5568;
-}
-
 .status-badge {
     display: inline-block;
     padding: 6px 12px;
@@ -186,129 +21,102 @@ table.data-table tbody td:first-child {
     color: #991b1b;
 }
 
-/* Modal Styles */
+/* ===== Modal Container ===== */
 .modal-content {
-    border-radius: 12px;
+    border-radius: 10px;
     border: none;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
+/* ===== Header ===== */
 .modal-header {
-    background: #667eea;
-    color: white;
-    border-radius: 12px 12px 0 0;
-    padding: 20px 30px;
-    border: none;
+    background: #4e73df;
+    color: #fff;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .modal-header .close {
-    color: white;
-    opacity: 0.8;
-    text-shadow: none;
-    font-size: 28px;
+    color: #fff;
+    opacity: 0.9;
+    font-size: 22px;
 }
 
 .modal-header .close:hover {
     opacity: 1;
 }
 
-.modal-title {
-    font-size: 20px;
-    font-weight: 600;
-}
-
+/* ===== Body ===== */
 .modal-body {
-    padding: 30px;
+    padding: 20px;
+    background: #f9fafc;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #2d3748;
+    font-weight: 600;
     font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
 }
 
 .form-control {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 6px;
+    border: 1px solid #d1d3e2;
+    padding: 10px 12px;
     font-size: 14px;
-    transition: all 0.3s ease;
 }
 
 .form-control:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #4e73df;
+    box-shadow: 0 0 0 2px rgba(78,115,223,0.15);
 }
 
-textarea.form-control {
-    resize: vertical;
-    min-height: 100px;
-}
-
+/* ===== Footer ===== */
 .modal-footer {
-    padding: 20px 30px;
-    background: #f7fafc;
-    border-radius: 0 0 12px 12px;
-    border: none;
+    background: #fff;
+    padding: 15px 20px;
+    border-top: 1px solid #e3e6f0;
     display: flex;
-    gap: 12px;
     justify-content: flex-end;
+    gap: 10px;
 }
 
+/* ===== Buttons ===== */
 .btn-cancel {
-    background: #e2e8f0;
-    color: #4a5568;
+    background: #e0e0e0;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 8px 18px;
+    border-radius: 6px;
     font-size: 14px;
-    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .btn-cancel:hover {
-    background: #cbd5e0;
+    background: #d6d6d6;
 }
 
 .btn-submit {
-    background: #667eea;
-    color: white;
+    background: #1cc88a;
+    color: #fff;
     border: none;
-    padding: 10px 24px;
-    border-radius: 8px;
+    padding: 8px 20px;
+    border-radius: 6px;
     font-size: 14px;
-    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-    background: #5568d3;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #a0aec0;
-}
-
-.empty-state i {
-    font-size: 64px;
-    margin-bottom: 16px;
-    opacity: 0.5;
-}
-
-.empty-state p {
-    font-size: 16px;
-    margin: 0;
+    background: #17a673;
 }

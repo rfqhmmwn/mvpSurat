@@ -6,7 +6,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center mb-3">
             <h1 class="h3 mb-2 text-gray-800 ">Data</h1>
             <?php 
                 session_message();
@@ -75,9 +75,7 @@
     </div>
     <!-- /.container-fluid -->
 
-<?php
-    include 'inc/admin/footer.php';   
-?>
+
 
 
     <!-- Add Modal -->
@@ -86,8 +84,9 @@
             <div class="modal-content">
                 <form action="index.php" method="post">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Add New Data</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -113,3 +112,7 @@
     </div>
 </body>
 </html>
+
+<?php
+    include 'inc/admin/footer.php';   
+?>

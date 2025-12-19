@@ -31,5 +31,27 @@ class admin
 
         echo '<script>window.location.href = "admin.php"</script>';
     }
+
+    function get_data_by_id($id) {
+        global $db;
+        $query = $db->query("SELECT * FROM `data` WHERE id = $id");
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function edit_data($nama, $surat, $alamat, $status) {
+        global $db;
+        $query = $db->prepare("UPDATE `data` SET nama = :nama, surat = :surat, alamat = :alamat, status = :status WHERE id = :id");
+        $query->execute([
+            'id' => $_GET['id'],
+            'nama' => "$nama",
+            'surat' => "$surat",
+            'alamat' => "$alamat",
+            'status' => "$status"
+        ]);
+        
+        $_SESSION['message'] = "Berhasil mengedit data.";
+        
+        echo '<script>window.location.href = "admin.php"</script>';
+    }
 }
 ?>

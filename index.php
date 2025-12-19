@@ -1,20 +1,39 @@
 <?php
-include "inc/user/header_user.php";
-include "inc/config.php";
-$get = new user;
-
-if (isset($_POST['submit']) == TRUE) {
-    $nama = $_POST['nama'];
-    $surat = $_POST['surat'];
-    $alamat = $_POST['alamat'];
-
-    $get->add_data($nama, $surat, $alamat);
-}
+    include 'inc/admin/header.php';      
+    $admin = new admin;
 ?>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
 
-                    <tbody>
-                        <?php 
-                        $data = $get->get_data();
+        <!-- Page Heading -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="h3 mb-2 text-gray-800 ">Data</h1>
+            <?php 
+                session_message();
+            ?>
+            <a data-toggle="modal" data-target="#addEmployeeModal" class="btn btn-primary d-sm-inline-block d-none">Add</a>
+        </div>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Jenis Surat</th>
+                                <th>Alamat</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                        $data = $admin->get_data();
                         if (count($data) > 0):
                             foreach ($data as $row) : 
                         ?>
@@ -26,8 +45,8 @@ if (isset($_POST['submit']) == TRUE) {
                                 <td>
                                     <span class="status-badge <?php 
                                         if ($row['status'] == 'Pending') echo 'status-pending';
-                                        elseif ($row['status'] == 'Approved') echo 'status-approved';
-                                        elseif ($row['status'] == 'Rejected') echo 'status-rejected';
+                                        elseif ($row['status'] == 'Accept') echo 'status-approved';
+                                        elseif ($row['status'] == 'Canceled') echo 'status-rejected';
                                         else echo 'status-pending';
                                     ?>">
                                         <?php echo $row['status']; ?>
@@ -47,11 +66,19 @@ if (isset($_POST['submit']) == TRUE) {
                                 </td>
                             </tr>
                         <?php endif; ?>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
     </div>
+    <!-- /.container-fluid -->
+
+<?php
+    include 'inc/admin/footer.php';   
+?>
+
 
     <!-- Add Modal -->
     <div id="addEmployeeModal" class="modal fade">

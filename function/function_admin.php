@@ -29,7 +29,7 @@ class admin
         $query->execute(['id' => $id]);
         $_SESSION['message'] = "Data berhasil dihapus.";
 
-        echo '<script>window.location.href = "groups.php"</script>';
+        echo '<script>window.location.href = "admin.php"</script>';
     }
 }
 ?>

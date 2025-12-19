@@ -40,7 +40,7 @@
                                     <td><?php echo $row['alamat']; ?></td>
                                     <td><?php echo $row['status']; ?></td>
                                     <td>
-                                         <a href="groups.php?action=hapus&id=<?php echo $row['id'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                         <a href="admin.php?action=hapus&id=<?php echo $row['id'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                          <a href="form_edit_groups.php?id=<?php echo $row['id'];?>" class="btn btn-warning btn-sm">Edit</a>
                                     </td>
                                 </tr>
